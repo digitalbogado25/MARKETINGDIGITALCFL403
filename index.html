@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitos y Verdades: Redes Sociales</title>
+  <!-- Enlace al archivo CSS (Ajusta si está dentro de la carpeta 'css' o en la raíz) -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- ESTE JUEGO FUE DISEÑADO CON AYUDA DE LA IA-->
+  <!-- Fondos luminosos animados decorativos -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- Contenedor principal centrado de la aplicación -->
+  <div class="app-container">
+
+    <!-- LOGO INSTITUCIONAL: Arriba de todo, centrado y con espacio ideal para celulares -->
+    <header class="app-header-logo">
+      <!-- Cambia 'cfl403.webp' o 'imagen/cfl403.webp' según donde tengas la imagen guardada -->
+      <img src="imagen/cfl403.webp" alt="Logo Institucional" class="logo-img">
+    </header>
+
+    <!-- PANTALLA 1: BIENVENIDA -->
+    <main id="screen-welcome" class="card fade-in">
+      <div class="badge">Marketing Digital • Expo 2026</div>
+      <h1 class="hero-title">Mitos y Verdades<br><span>sobre Redes Sociales</span></h1>
+      <p class="hero-desc">Demostrá cuánto sabés sobre algoritmos, estrategias de crecimiento, seguidores y rendimiento de publicaciones en este desafío interactivo.</p>
+      
+      <div class="features-grid">
+        <div class="feature-item">
+          <span class="feature-icon">❓</span>
+          <div><strong>13 afirmaciones</strong><br><small>Pueden ser verdaderos o falsos</small></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">💡</span>
+          <div><strong>Explicación</strong><br><small>En cada respuesta</small></div>
+        </div>
+      </div>
+
+      <button id="btn-start" class="btn btn-primary btn-block">
+        ¡Comenzar el Desafío! 🚀
+      </button>
+    </main>
+
+    <!-- PANTALLA 2: JUEGO / PREGUNTAS -->
+    <main id="screen-quiz" class="card fade-in hidden">
+      <!-- Encabezado del Quiz -->
+      <header class="quiz-header">
+        <div class="quiz-status">
+          <span id="question-number">Pregunta 1 de 13</span>
+          <span id="score-live">Puntos: 0</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="progress-bar-fill" class="progress-bar-fill" style="width: 7.69%;"></div>
+        </div>
+      </header>
+
+      <!-- Pregunta -->
+      <div class="question-container">
+        <p id="question-text" class="question-text">Cargando pregunta...</p>
+      </div>
+
+      <!-- Opciones de Respuesta (Corregido: Solo dice FALSO para no revelar el resultado) -->
+      <div class="options-container">
+        <button id="btn-verdadero" class="btn-option" onclick="selectAnswer(true)">
+          <span class="option-icon">👍</span>
+          <span class="option-text">VERDADERO</span>
+        </button>
+        <button id="btn-falso" class="btn-option" onclick="selectAnswer(false)">
+          <span class="option-icon">👎</span>
+          <span class="option-text">FALSO</span>
+        </button>
+      </div>
+
+      <!-- Cuestionario / Feedback del Resultado -->
+      <div id="feedback-card" class="feedback-card hidden">
+        <div class="feedback-header">
+          <span id="feedback-icon" class="feedback-icon"></span>
+          <h2 id="feedback-title" class="feedback-title"></h2>
+        </div>
+        <p id="feedback-text" class="feedback-text"></p>
+        <button id="btn-next" class="btn btn-primary btn-block" onclick="nextQuestion()">
+          Siguiente Pregunta ➡️
+        </button>
+      </div>
+    </main>
+
+    <!-- PANTALLA 3: RESULTADOS FINALES -->
+    <main id="screen-result" class="card fade-in hidden">
+      <div class="badge">Resultados Finales</div>
+      <h2 class="result-title">¡Desafío Completado! 🎉</h2>
+
+      <div class="score-circle">
+        <span id="final-score" class="score-num">0 / 13</span>
+        <span class="score-label">Respuestas Correctas</span>
+      </div>
+
+      <p id="result-message" class="result-message"></p>
+
+      <div class="actions">
+        <button class="btn btn-primary btn-block" onclick="restartQuiz()">
+          🔄 Volver a Jugar
+        </button>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <p>Diseñado con ayuda de IA</p>
+    </footer>
+
+  </div> <!-- Fin de .app-container -->
+
+  <!-- Archivo JavaScript (Ajusta la ruta si tu script está en otra carpeta, ej: 'java/script.js') -->
+  <script src="java/script.js"></script>
+  
+</body>
+</html>
